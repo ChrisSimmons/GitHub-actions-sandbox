@@ -1,0 +1,19 @@
+name: created Release Stuff
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - 
+      name: GITHUB_JOB x
+      run: echo ${GITHUB_JOB}
+    - 
+      name: printenv
+      run: printenv
+    - 
+      name: printenv GITHUB
+      run: printenv | grep ^GITHUB

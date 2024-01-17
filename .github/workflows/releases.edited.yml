@@ -1,7 +1,8 @@
-name: Release Stuff
+name: edited Release Stuff
 
 on:
   release:
+    types: [edited]
 
 jobs:
   build:
