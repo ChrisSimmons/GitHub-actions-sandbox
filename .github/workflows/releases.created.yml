@@ -1,11 +1,12 @@
-name: created Release
+name: Created Release workflow
 
 on:
   release:
     types: [created]
 
 jobs:
-  build:
+  created-release:
+    name: Created Release job
     runs-on: ubuntu-latest
     steps:
     - 

@@ -1,11 +1,12 @@
-name: prereleased Release
+name: Pre-Released Release workflow
 
 on:
   release:
     types: [prereleased]
 
 jobs:
-  build:
+  pre-released-release:
+    name: Pre-Released Release job
     runs-on: ubuntu-latest
     steps:
     - 

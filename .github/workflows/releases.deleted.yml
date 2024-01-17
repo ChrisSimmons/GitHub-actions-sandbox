@@ -1,11 +1,12 @@
-name: deleted Release
+name: Deleted Release workflow
 
 on:
   release:
     types: [deleted]
 
 jobs:
-  build:
+  deleted-release:
+    name: Deleted Release job
     runs-on: ubuntu-latest
     steps:
     - 

@@ -1,11 +1,12 @@
-name: unpublished Release
+name: Unpublished Release workflow
 
 on:
   release:
     types: [unpublished]
 
 jobs:
-  build:
+  unpublished-release:
+    name: Unpublished Release job
     runs-on: ubuntu-latest
     steps:
     - 
