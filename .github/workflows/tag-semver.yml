@@ -16,5 +16,8 @@ jobs:
     - 
       name: RegEx try
       run: |
-        RegEx="^(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$"
-        echo $RegEx
+        text="name=value with spaces"
+        [[ $text =~ ^([a-z]+)=(.*)$ ]]
+        echo all: "${BASH_REMATCH[0]}"
+        echo name: "${BASH_REMATCH[1]}"
+        echo value: "${BASH_REMATCH[2]}"
