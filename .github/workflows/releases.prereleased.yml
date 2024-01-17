@@ -1,4 +1,4 @@
-name: prereleased Release Stuff
+name: prereleased Release
 
 on:
   release:

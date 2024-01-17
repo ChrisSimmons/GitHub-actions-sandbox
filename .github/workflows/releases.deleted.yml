@@ -1,4 +1,4 @@
-name: deleted shed Release Stuff
+name: deleted Release
 
 on:
   release:

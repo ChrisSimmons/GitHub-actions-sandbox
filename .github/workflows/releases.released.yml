@@ -1,4 +1,4 @@
-name: released Release Stuff
+name: released Release
 
 on:
   release:
