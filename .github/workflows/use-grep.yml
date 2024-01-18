@@ -14,5 +14,5 @@ jobs:
     steps:
     - 
       name: 
-      run: echo "1.2.3-x+1.2.3" | grep -oP ${{ vars.SemVer2RegEx }}
+      run: echo "1.2.3-x+1.2.3" | grep -oP ${SemVer2RegEx}
 
