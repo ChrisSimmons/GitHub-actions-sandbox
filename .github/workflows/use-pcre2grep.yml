@@ -1,0 +1,17 @@
+name: Use pcre2grep?
+
+on:
+  push:
+
+env:
+  SemVer2RegEx: '^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-
+    ]+)*))?$'
+
+jobs:
+  push-any-tag:
+    name: Use pcre2grep job
+    runs-on: ubuntu-latest
+    steps:
+    - 
+      run: pcre2grep --help
+
