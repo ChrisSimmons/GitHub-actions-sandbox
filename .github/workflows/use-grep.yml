@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - 
-      name: 
+      run: echo ${SemVer2RegEx}
+    - 
       run: echo "1.2.3-x+1.2.3" | grep -oP ${SemVer2RegEx}
 
