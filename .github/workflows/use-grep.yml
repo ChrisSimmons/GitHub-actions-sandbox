@@ -1,0 +1,18 @@
+name: Use grep?
+
+on:
+  push:
+
+env:
+  SemVer2RegEx: '^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-
+    ]+)*))?$'
+
+jobs:
+  push-any-tag:
+    name: Use grep job
+    runs-on: ubuntu-latest
+    steps:
+    - 
+      name: 
+      run: echo "1.2.3-x+1.2.3" | grep -oP ${{ vars.SemVer2RegEx }}
+
