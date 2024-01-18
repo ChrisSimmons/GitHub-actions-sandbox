@@ -1,4 +1,4 @@
-name: Use pcre2grep?
+name: Use pcregrep?
 
 on:
   push:
@@ -9,9 +9,9 @@ env:
 
 jobs:
   push-any-tag:
-    name: Use pcre2grep job
+    name: Use pcregrep job
     runs-on: ubuntu-latest
     steps:
     - 
-      run: pcre2grep --help
+      run: pcregrep --help
 
