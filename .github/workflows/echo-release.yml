@@ -1,0 +1,13 @@
+name: Release Echo
+
+on: [release]
+
+jobs: 
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+    - name: All environment variables
+      run: printenv
+    - 
+      name: printenv GITHUB
+      run: printenv | grep ^GITHUB

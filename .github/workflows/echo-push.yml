@@ -1,0 +1,16 @@
+name: Push Echo
+
+on: [push]
+
+jobs: 
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+    - name: All environment variables
+      run: printenv
+    - 
+      name: printenv GITHUB
+      run: printenv | grep ^GITHUB
+    - 
+      name: printenv GITHUB_REF
+      run: printenv | grep ^GITHUB_REF
