@@ -1,0 +1,80 @@
+name: Echo stuff 1
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - 
+      name: run_id
+      run: echo ${{ github.run_id }}
+    - 
+      name: run_number
+      run: echo ${{ github.run_number }}
+    - 
+      name: run_attempt
+      run: echo ${{ github.run_attempt }}
+    - 
+      name: workflow
+      run: echo ${{ github.workflow }}
+    - 
+      name: workflow_ref
+      run: echo ${{ github.workflow_ref }}
+    - 
+      name: workflow_sha
+      run: echo ${{ github.workflow_sha }}
+    - 
+      name: sha
+      run: echo ${{ github.sha }}
+    - 
+      name: secret_source
+      run: echo ${{ github.secret_source }}
+    - 
+      name: retention_days
+      run: echo ${{ github.retention_days }}
+    - 
+      name: repositoryUrl
+      run: echo ${{ github.repositoryUrl }}
+    - 
+      name: repository_owner_id
+      run: echo ${{ github.repository_owner_id }}
+    - 
+      name: repository_owner
+      run: echo ${{ github.repository_owner }}
+    - 
+      name: repository_id
+      run: echo ${{ github.repository_id }}
+    - 
+      name: repository
+      run: echo ${{ github.repository }}
+    - 
+      name: ref_type
+      run: echo ${{ github.ref_type }}
+    - 
+      name: ref_protected
+      run: echo ${{ github.ref_protected }}
+    - 
+      name: ref_name
+      run: echo ${{ github.ref_name }}
+    - 
+      name: ref
+      run: echo ${{ github.ref }}
+    - 
+      name: path
+      run: echo ${{ github.path }}
+    - 
+      name: job
+      run: echo ${{ github.job }}
+    - 
+      name: head_ref
+      run: echo ${{ github.head_ref }}
+    - 
+      name: graphql_url
+      run: echo ${{ github.graphql_url }}
+    - 
+      name: event_path
+      run: echo ${{ github.event_path }}
+    - 
+      name: event_name
+      run: echo ${{ github.event_name }}
