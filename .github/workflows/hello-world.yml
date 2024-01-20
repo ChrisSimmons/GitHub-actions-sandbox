@@ -6,7 +6,7 @@ on:
   workflow_call:
 
 jobs:
-  hello-world:
+  hello_world:
     name: Hello World
     runs-on: ubuntu-latest
     steps:

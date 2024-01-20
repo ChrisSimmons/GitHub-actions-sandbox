@@ -4,6 +4,6 @@ name: Call Hello World
 on: workflow_dispatch
 
 jobs:
-  hello-world:
+  hello_world:
     name: Hello World
     uses: ./.github/workflows/hello-world.yml
