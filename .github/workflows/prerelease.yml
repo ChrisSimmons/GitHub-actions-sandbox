@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     name: TODO
     steps:
-      - name: Derive SemVer
-        id: parse
+      - name: Enforce SemVer for pre-release
+        id: enforce_semver
         uses: NetChris/semver-pre-release@v0
       - name: SemVer Echo
         id: semver_echo
         run: |
-          echo ${{ steps.parse.outputs.semver_version }}
+          echo ${{ steps.enforce_semver.outputs.semver_version }}
