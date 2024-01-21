@@ -12,6 +12,12 @@ jobs:
       - name: Derive SemVer
         id: parse
         uses: NetChris/parse-semver@11-output-nuget-microsoft-versions
+      - name: SemVer Gate
+        id: semver_gate
+        if: ${{ steps.parse.outputs.semver_version == '' }}
+        run: |
+          echo Releases require a SemVer tag
+          exit 1
       - name: Version Gate
         id: version_gate
         if: ${{ steps.parse.outputs.pre_release_version != '' }}
