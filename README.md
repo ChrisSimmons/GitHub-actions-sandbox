@@ -18,3 +18,19 @@ gh api /repos/ChrisSimmons/PersonalPublicBuildTesting/actions/runs --paginate `
 ```
 
 - [Mass deletion of GitHub Actions workflow runs](https://qmacro.org/blog/posts/2021/03/26/mass-deletion-of-github-actions-workflow-runs/)
+
+Mass delete all releases:
+
+``` powershell
+git tag -l "*" | foreach { gh release delete -y $_ }
+```
+
+Mass delete all tags:
+
+``` powershell
+# TODO
+# https://stackoverflow.com/a/53735395/208990
+git fetch
+git push -d origin $(git tag -l "*")
+git tag -d $(git tag -l "*")
+```
