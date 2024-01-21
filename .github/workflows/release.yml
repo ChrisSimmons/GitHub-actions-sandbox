@@ -7,24 +7,21 @@ on:
 jobs:
   publish_release:
     runs-on: ubuntu-latest
-    name: Publish Release
+    name: TODO
     steps:
-      - name: Derive SemVer
-        id: parse
-        uses: NetChris/parse-semver@11-output-nuget-microsoft-versions
-      - name: SemVer Gate
-        id: semver_gate
-        if: ${{ steps.parse.outputs.semver_version == '' }}
+      - name: Enforce SemVer for release
+        id: enforce_semver
+        uses: NetChris/semver-release@v0
+      - name: SemVer Echo
+        id: semver_echo
         run: |
-          echo Releases require a SemVer tag
-          exit 1
-      - name: Version Gate
-        id: version_gate
-        if: ${{ steps.parse.outputs.pre_release_version != '' }}
-        run: |
-          echo This is a pre-release version.  Use a GitHub pre-release or tag as SemVer without a pre-release version.
-          exit 1
-      - name: What version are we releasing?
-        id: echo_version
-        run: |
-          echo ${{ steps.parse.outputs.semver_version }}
+          echo semver_version:          ${{ steps.enforce_semver.outputs.semver_version }}
+          echo major_version:           ${{ steps.enforce_semver.outputs.major_version }}
+          echo minor_version:           ${{ steps.enforce_semver.outputs.minor_version }}
+          echo patch_version:           ${{ steps.enforce_semver.outputs.patch_version }}
+          echo pre_release_version:     ${{ steps.enforce_semver.outputs.pre_release_version }}
+          echo build_metadata:          ${{ steps.enforce_semver.outputs.build_metadata }}
+          echo major_minor_version:     ${{ steps.enforce_semver.outputs.major_minor_version }}
+          echo fallback_version:        ${{ steps.enforce_semver.outputs.fallback_version }}
+          echo dotnet_assembly_version: ${{ steps.enforce_semver.outputs.dotnet_assembly_version }}
+          echo nuget_version:           ${{ steps.enforce_semver.outputs.nuget_version }}
