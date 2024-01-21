@@ -1,0 +1,29 @@
+name: Publish Release
+
+on:
+  release:
+    # Why do we use the "published" type instead of "released" and "prereleased"?
+    # See: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#release
+    # > Note: The prereleased type will not trigger for pre-releases published from draft releases, but the published type will trigger. If you want a workflow to run when stable and pre-releases publish, subscribe to published instead of released and prereleased.
+    types: [published]
+
+jobs:
+  publish-release:
+    runs-on: ubuntu-latest
+    name: TODO
+    steps:
+      - name: Derive SemVer
+        id: parse
+        uses: NetChris/parse-semver@11-output-nuget-microsoft-versions
+      - name: Pre-Release
+        id: pre-release
+        if: ${{ github.event.release.prerelease }}
+        run: |
+          echo This is a pre-release type
+          exit 1
+      - name: Release
+        id: release
+        run: |
+          echo ${{ steps.parse.outputs.semver_version }}
+      - name: YYY
+        run: echo YYY
