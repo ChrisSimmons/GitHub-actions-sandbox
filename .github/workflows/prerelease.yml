@@ -15,20 +15,8 @@ jobs:
     steps:
       - name: Derive SemVer
         id: parse
-        uses: NetChris/parse-semver@11-output-nuget-microsoft-versions
+        uses: NetChris/semver-pre-release@v0
       - name: SemVer Gate
         id: semver_gate
-        if: ${{ steps.parse.outputs.semver_version == '' }}
         run: |
-          echo Pre-Releases require a SemVer tag
-          exit 1
-      - name: Version Gate
-        id: version_gate
-        if: ${{ steps.parse.outputs.pre_release_version == '' }}
-        run: |
-          echo This is NOT a pre-release version.  Use a GitHub release or tag as SemVer with a pre-release version.
-          exit 1
-      - name: What version are we releasing?
-        id: echo_version
-        run: |
-          echo ${{ steps.parse.outputs.semver_version }}
+          echo ${{ steps.parse.outputs.semver_version == '' }}
