@@ -1,0 +1,24 @@
+name: Release
+
+on:
+  release:
+    types: [released]
+
+jobs:
+  publish_release:
+    runs-on: ubuntu-latest
+    name: Publish Release
+    steps:
+      - name: Derive SemVer
+        id: parse
+        uses: NetChris/parse-semver@11-output-nuget-microsoft-versions
+      - name: Version Gate
+        id: version_gate
+        if: ${{ steps.parse.outputs.pre_release_version != '' }}
+        run: |
+          echo This is a pre-release version.  Use a GitHub pre-release or tag as SemVer without a pre-release version.
+          exit 1
+      - name: What version are we releasing?
+        id: echo_version
+        run: |
+          echo ${{ steps.parse.outputs.semver_version }}

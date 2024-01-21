@@ -1,0 +1,19 @@
+name: Created Release workflow
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  created-release:
+    name: Created Release job
+    runs-on: ubuntu-latest
+    steps:
+    - name: All environment variables
+      run: printenv
+    - 
+      name: printenv GITHUB
+      run: printenv | grep ^GITHUB
+    - 
+      name: Prelease?
+      run: echo "Prerelease? ${{ github.event.release.prerelease }}"

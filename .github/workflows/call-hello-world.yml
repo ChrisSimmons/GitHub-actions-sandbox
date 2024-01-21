@@ -1,9 +1,0 @@
-# Exercise "Hello World" workflow
-name: Call Hello World
-
-on: workflow_dispatch
-
-jobs:
-  hello-world:
-    name: Hello World
-    uses: ./.github/workflows/hello-world.yml
