@@ -19,4 +19,13 @@ jobs:
       - name: SemVer Echo
         id: semver_echo
         run: |
-          echo ${{ steps.enforce_semver.outputs.semver_version }}
+          echo semver_version:          ${{ steps.enforce_semver.outputs.semver_version }}
+          echo major_version:           ${{ steps.enforce_semver.outputs.major_version }}
+          echo minor_version:           ${{ steps.enforce_semver.outputs.minor_version }}
+          echo patch_version:           ${{ steps.enforce_semver.outputs.patch_version }}
+          echo pre_release_version:     ${{ steps.enforce_semver.outputs.pre_release_version }}
+          echo build_metadata:          ${{ steps.enforce_semver.outputs.build_metadata }}
+          echo major_minor_version:     ${{ steps.enforce_semver.outputs.major_minor_version }}
+          echo fallback_version:        ${{ steps.enforce_semver.outputs.fallback_version }}
+          echo dotnet_assembly_version: ${{ steps.enforce_semver.outputs.dotnet_assembly_version }}
+          echo nuget_version:           ${{ steps.enforce_semver.outputs.nuget_version }}
