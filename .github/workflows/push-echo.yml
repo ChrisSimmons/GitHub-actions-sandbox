@@ -1,4 +1,4 @@
-name: Echo stuff 2
+name: Push
 
 on: [push]
 

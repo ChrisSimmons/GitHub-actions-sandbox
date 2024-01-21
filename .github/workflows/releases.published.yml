@@ -1,20 +1,23 @@
-name: Published Release workflow
+name: Publish Release
 
 on:
   release:
     types: [published]
 
 jobs:
-  published-release:
-    name: Published Release job
+  publish-release:
     runs-on: ubuntu-latest
+    name: TODO
     steps:
-    - 
-      name: printenv
-      run: printenv
-    - 
-      name: printenv GITHUB
-      run: printenv | grep ^GITHUB
-    - 
-      name: Prelease?
-      run: echo "Prerelease? ${{ github.event.release.prerelease }}"
+      - name: Pre-Release
+        id: pre-release
+        if: ${{ github.event.release.prerelease }}
+        run: echo Prerelease
+      - name: XXX
+        run: echo XXX
+      - name: Pre-Release
+        id: release
+        if: ${{ ! github.event.release.prerelease }}
+        run: echo Release
+      - name: YYY
+        run: echo YYY
