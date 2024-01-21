@@ -16,7 +16,7 @@ jobs:
       - name: Derive SemVer
         id: parse
         uses: NetChris/semver-pre-release@v0
-      - name: SemVer Gate
-        id: semver_gate
+      - name: SemVer Echo
+        id: semver_echo
         run: |
-          echo ${{ steps.parse.outputs.semver_version == '' }}
+          echo ${{ steps.parse.outputs.semver_version }}
