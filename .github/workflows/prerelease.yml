@@ -2,10 +2,11 @@ name: Pre-Release
 
 on:
   release:
-    # Why do we use the "published" type instead of "released" and "prereleased"?
     # See: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#release
     # > Note: The prereleased type will not trigger for pre-releases published from draft releases, but the published type will trigger. If you want a workflow to run when stable and pre-releases publish, subscribe to published instead of released and prereleased.
-    types: [published]
+    # So, if you Draft a prerelease apparently publishing is then impossible. 
+    # I believe the workaround is to re-create the pre-release against the same tag
+    types: [prereleased]
 
 jobs:
   publish_pre_release:
